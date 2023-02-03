@@ -1,0 +1,32 @@
+.header-container {
+    width: 1280px;
+    margin:0 auto;
+    display: flex;
+}
+
+.logo-container {
+    margin: 18px auto 0 67px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #584a4ab8;
+
+
+}
+
+.user-email-container {
+  
+    width: 320px;
+    margin: 24px 80px 0 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #FFFCFB;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.user-email-container p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}

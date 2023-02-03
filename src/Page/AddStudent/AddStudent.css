@@ -1,0 +1,55 @@
+.add-student-container {
+    width: 1000px;
+
+}
+
+.add-student-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-student-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 32px;
+}
+
+.add-student-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 32px;
+}
+
+.input-container {}
+
+.first-input-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+    /* border: 1px solid red; */
+}
+
+.first-input-container input {
+    background-color: white;
+}
+
+.second-input-container .address-input-container {
+
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.from-button {
+    background-color: rgba(243, 56, 35, 1) !important;
+    margin-top: 50px;
+    color: white !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+}
