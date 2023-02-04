@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
 import React from 'react';
 import './Header.css'
 const Header = () => {
@@ -8,7 +10,12 @@ const Header = () => {
                 LOGO
             </div>
             <div className='user-email-container'>
-                    <p>username@gmail.com</p>
+                    <p style={{
+                        display:'flex',
+                        alignItems:'center',
+                        justifyContent:'center',
+                        
+                }}> <span style={{marginRight:'5px'}}><PersonIcon/></span> username@gmail.com</p>
             </div>
 
 

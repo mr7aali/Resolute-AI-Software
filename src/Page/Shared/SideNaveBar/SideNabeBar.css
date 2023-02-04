@@ -8,7 +8,7 @@
 .side-navbar-container a{
     text-decoration: none;
 }
-.side-navbar-container .list-item{
+.side-navbar-container .list-item0{
     /* border: 1px solid red; */
     display: flex;
     align-items: center;
@@ -20,18 +20,40 @@
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
    
 }
-.list-item h5{
+.list-item0 h5{
     font-size: 16px;
     font-weight: 400;
     margin: 0;
     color: rgba(0, 0, 0, 0.6);
 }
-.list-item:hover {
+
+ 
+.list-item0:hover {
     background-color: rgba(243, 56, 35, 1);
     border-radius: 5px;
     font-size: 50px;
 }
-.list-item:hover  .list-text{
+
+
+.list-item0:hover  .list-text{
+    font-size: 16px;
+    font-weight: 700;
+    color: 
+    rgba(255, 255, 255, 1);
+} 
+
+
+.list-item1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 13.5px;
+    padding-bottom: 13.5px;
+    margin-bottom: 8px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(243, 56, 35, 1);
+    border-radius: 5px;
+    font-size: 50px;
     font-size: 16px;
     font-weight: 700;
     color: 
