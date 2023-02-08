@@ -12,7 +12,7 @@ const ViewStudent = ({handleClose,s}) => {
     const handleSummition = data => {
         console.log(data);
         const final_data = { ...data, Email: "admin@gmail.com" }
-        fetch('http://localhost:5000/post', {
+        fetch('https://resolute-ai-software-server.vercel.app/post', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +27,7 @@ const ViewStudent = ({handleClose,s}) => {
 
 
     }
-  console.log(s)
+
     return (
         <div  className='add-student-container'>
             <div className='add-student-header'>

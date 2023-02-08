@@ -8,18 +8,24 @@ import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 
 import ViewStudent from '../ViewStudent/ViewStudent';
+import EditPage from '../EditPage/EditPage';
 const CustomizedTables = () => {
 
     const [open, setOpen] = React.useState(false);
-    const [modalData,setmodalData]= useState(null);
+    const [open2,setOpen2] = React.useState(false);
+    const [modalData, setmodalData] = useState(null);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleOpen2 = () => setOpen2(true);
+    const handleClose2 = () => setOpen2(false);
 
 
     const { data: student = [], refetch } = useQuery({
         queryKey: ['student'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/studentData');
+            const res = await fetch('https://resolute-ai-software-server.vercel.app/studentData');
             const data = await res.json();
             return data;
         }
@@ -29,7 +35,7 @@ const CustomizedTables = () => {
 
         console.log(data?._id)
 
-        fetch(`http://localhost:5000/deletestudent?id=${data?._id}`, {
+        fetch(`https://resolute-ai-software-server.vercel.app/deletestudent?id=${data?._id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -39,7 +45,8 @@ const CustomizedTables = () => {
                 refetch();
             })
     }
-   
+  
+
 
     return (
 
@@ -86,15 +93,18 @@ const CustomizedTables = () => {
                                 </div>
                                 <div className={(i % 2 === 0) ? "table-row1-col" : "table-row2-col"}>
                                     <h5>
-                                        <span  onClick={
-                                           ()=>{
-                                            setmodalData(s);
-                                            handleOpen();
-
-                                
-                                           }
+                                        <span onClick={
+                                            () => {
+                                                setmodalData(s);
+                                                handleOpen();
+                                            }
                                         } style={{ margin: '5px', cursor: 'pointer' }}> <VisibilityIcon /> </span>
-                                        <span style={{ margin: '5px', cursor: 'pointer' }}><BorderColorIcon /></span>
+                                        <span onClick={
+                                            ()=>{
+                                                setmodalData(s);
+                                                handleOpen2();
+                                            }
+                                            } style={{ margin: '5px', cursor: 'pointer' }}><BorderColorIcon /></span>
                                         <span onClick={() => handleDelete(s)} style={{ margin: '5px', cursor: 'pointer' }}> <DeleteIcon /></span>
                                     </h5>
                                 </div>
@@ -150,13 +160,39 @@ const CustomizedTables = () => {
 
                 >
                     <Box className='modal-container'>
-                        <ViewStudent 
-                        s={modalData} 
-                        setmodalData={setmodalData}
-                        handleClose={handleClose}
-                         />
+                        <ViewStudent
+                            s={modalData}
+                            setmodalData={setmodalData}
+                            handleClose={handleClose}
+                        />
+                       
                     </Box>
                 </Modal>
+
+                <Modal
+                    open={open2}
+                    onClose={handleClose2}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                    sx={{
+                        border: '1px solid red',
+                        display: 'grid',
+                        placeItems: 'center'
+                    }}
+
+                >
+                    <Box className='modal-container'>
+                   
+                        <EditPage
+                        s={modalData}
+                        setmodalData={setmodalData}
+                        handleClose={handleClose2}
+                        refetch={refetch}
+                        />
+                       
+                    </Box>
+                </Modal>
+
             </div>
 
         </>

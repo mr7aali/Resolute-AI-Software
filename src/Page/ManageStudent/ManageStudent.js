@@ -19,6 +19,7 @@ const ManageStudent = () => {
             }}>
                 <div>
                     <CustomizedTables />
+                    
                 </div>
             </div>
         </div>
